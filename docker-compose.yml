@@ -1,0 +1,18 @@
+services:
+  shawnaustinrocks:
+    build: .
+    container_name: shawnaustinrocks
+    restart: always
+    expose:
+      - 80
+    environment:
+      - VIRTUAL_HOST=shawnaustinrocks.robertmccaleb.com
+      - VIRTUAL_PORT=80
+      - LETSENCRYPT_HOST=shawnaustinrocks.robertmccaleb.com
+      - LETSENCRYPT_EMAIL=robert.mccaleb@gmail.com
+    networks:
+      - nginx-proxy
+
+networks:
+  nginx-proxy:
+    external: true
