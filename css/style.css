@@ -1,0 +1,93 @@
+:root {
+    --bg-color: #0d0d0d;
+    --text-color: #ffffff;
+    --accent: #ff00ff; /* Magenta glitch accent */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', monospace; /* Tech/Glitch vibe */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+/* --- Hero Section (Video + Glitch Title) --- */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    filter: grayscale(100%) contrast(1.2); /* Stylized B&W */
+    opacity: 0.6;
+}
+
+.hero-content {
+    z-index: 1;
+    text-align: center;
+}
+
+h1.glitch {
+    font-size: 6rem;
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: 10px;
+}
+
+/* --- Collage Section --- */
+.collage-container {
+    padding: 20px;
+    column-count: 4; /* Masonry effect */
+    column-gap: 15px;
+    background: #111;
+}
+
+.collage-item {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 15px;
+    position: relative;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: grayscale(80%);
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.collage-item:hover {
+    transform: scale(1.05) rotate(1deg); /* Slight chaotic tilt */
+    filter: grayscale(0%) contrast(1.1);
+    border-color: var(--accent);
+    z-index: 10;
+    box-shadow: 0 0 15px var(--accent);
+}
+
+.collage-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+    .collage-container { column-count: 3; }
+    h1.glitch { font-size: 4rem; }
+}
+@media (max-width: 768px) {
+    .collage-container { column-count: 2; }
+    h1.glitch { font-size: 2.5rem; }
+}
