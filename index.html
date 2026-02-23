@@ -30,29 +30,30 @@
     </section>
 
     <script>
-        // Auto-load 50 images
         const collageContainer = document.getElementById('collage');
-        const totalImages = 50;
+        const images = [
+            1,5,6,7,8,11,12,14,15,16,17,18,19,
+            21,22,23,24,25,26,27,28,29,30,31,32,
+            33,34,35,36,37,38,39,40,43,44,45
+        ];
 
-        for (let i = 1; i <= totalImages; i++) {
-            // Format number with leading zeros (001, 002...)
+        images.forEach(i => {
             const num = String(i).padStart(3, '0');
             const imgPath = `assets/img/Shawn_Austin_${num}.jpg`;
 
             const div = document.createElement('div');
             div.className = 'collage-item';
-            
+
             const img = document.createElement('img');
             img.src = imgPath;
             img.alt = `Shawn Austin Photo ${i}`;
-            img.loading = "lazy"; // Performance optimization
+            img.loading = "lazy";
 
-            // Add random staggered animation delay for entrance
             div.style.animationDelay = `${Math.random() * 2}s`;
 
             div.appendChild(img);
             collageContainer.appendChild(div);
-        }
+        });
     </script>
 </body>
 </html>
