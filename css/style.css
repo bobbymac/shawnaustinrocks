@@ -127,6 +127,24 @@ h1.glitch {
     text-shadow: 0 0 5px var(--accent);
 }
 
+/* --- Contact Section (Below Video) --- */
+.contact-section {
+    background: linear-gradient(180deg, #0d0d0d 0%, #1a1a1a 50%, #111 100%);
+    padding: 60px 20px;
+    text-align: center;
+    border-top: 2px solid var(--accent);
+    border-bottom: 2px solid var(--accent);
+}
+
+.contact-box {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.3);
+}
+
 /* --- Collage Section --- */
 .collage-container {
     padding: 20px;
