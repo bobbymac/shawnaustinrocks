@@ -1,0 +1,24 @@
+name: shawnaustinrocks
+services:
+  web:
+    image: sha256:b3dd405b93b479dac8605a13e0d6bfdfea5cb2b575cc0688c2242d58234e151d
+    pull_policy: never
+    container_name: shawnaustinrocks
+    restart: always
+    environment:
+      VIRTUAL_HOST: shawnaustinrocks.com,www.shawnaustinrocks.com
+      VIRTUAL_PORT: '80'
+      LETSENCRYPT_HOST: shawnaustinrocks.com,www.shawnaustinrocks.com
+      LETSENCRYPT_EMAIL: robert.mccaleb@gmail.com
+    volumes:
+    - ./default.conf:/etc/nginx/conf.d/default.conf:ro
+    networks:
+    - nginx-proxy
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: '3'
+networks:
+  nginx-proxy:
+    external: true
